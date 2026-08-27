@@ -10,33 +10,232 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ActiveRouteImport } from './routes/active'
+import { Route as AdditionalWorkRouteImport } from './routes/additional-work'
+import { Route as ArrivalRouteImport } from './routes/arrival'
+import { Route as AvailabilityRouteImport } from './routes/availability'
+import { Route as CompleteRouteImport } from './routes/complete'
+import { Route as DecisionRouteImport } from './routes/decision'
+import { Route as DemandRouteImport } from './routes/demand'
+import { Route as EndOtpRouteImport } from './routes/end-otp'
+import { Route as EvidenceRouteImport } from './routes/evidence'
+import { Route as IncidentRouteImport } from './routes/incident'
+import { Route as NavigateRouteImport } from './routes/navigate'
+import { Route as ServiceAreaRouteImport } from './routes/service-area'
+import { Route as StartOtpRouteImport } from './routes/start-otp'
+import { Route as JobsIndexRouteImport } from './routes/jobs.index'
+import { Route as JobsJobIdRouteImport } from './routes/jobs.$jobId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ActiveRoute = ActiveRouteImport.update({
+  id: '/active',
+  path: '/active',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdditionalWorkRoute = AdditionalWorkRouteImport.update({
+  id: '/additional-work',
+  path: '/additional-work',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArrivalRoute = ArrivalRouteImport.update({
+  id: '/arrival',
+  path: '/arrival',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AvailabilityRoute = AvailabilityRouteImport.update({
+  id: '/availability',
+  path: '/availability',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompleteRoute = CompleteRouteImport.update({
+  id: '/complete',
+  path: '/complete',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DecisionRoute = DecisionRouteImport.update({
+  id: '/decision',
+  path: '/decision',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DemandRoute = DemandRouteImport.update({
+  id: '/demand',
+  path: '/demand',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EndOtpRoute = EndOtpRouteImport.update({
+  id: '/end-otp',
+  path: '/end-otp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EvidenceRoute = EvidenceRouteImport.update({
+  id: '/evidence',
+  path: '/evidence',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IncidentRoute = IncidentRouteImport.update({
+  id: '/incident',
+  path: '/incident',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NavigateRoute = NavigateRouteImport.update({
+  id: '/navigate',
+  path: '/navigate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceAreaRoute = ServiceAreaRouteImport.update({
+  id: '/service-area',
+  path: '/service-area',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StartOtpRoute = StartOtpRouteImport.update({
+  id: '/start-otp',
+  path: '/start-otp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JobsIndexRoute = JobsIndexRouteImport.update({
+  id: '/jobs/',
+  path: '/jobs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JobsJobIdRoute = JobsJobIdRouteImport.update({
+  id: '/jobs/$jobId',
+  path: '/jobs/$jobId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/active': typeof ActiveRoute
+  '/additional-work': typeof AdditionalWorkRoute
+  '/arrival': typeof ArrivalRoute
+  '/availability': typeof AvailabilityRoute
+  '/complete': typeof CompleteRoute
+  '/decision': typeof DecisionRoute
+  '/demand': typeof DemandRoute
+  '/end-otp': typeof EndOtpRoute
+  '/evidence': typeof EvidenceRoute
+  '/incident': typeof IncidentRoute
+  '/navigate': typeof NavigateRoute
+  '/service-area': typeof ServiceAreaRoute
+  '/start-otp': typeof StartOtpRoute
+  '/jobs/$jobId': typeof JobsJobIdRoute
+  '/jobs/': typeof JobsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/active': typeof ActiveRoute
+  '/additional-work': typeof AdditionalWorkRoute
+  '/arrival': typeof ArrivalRoute
+  '/availability': typeof AvailabilityRoute
+  '/complete': typeof CompleteRoute
+  '/decision': typeof DecisionRoute
+  '/demand': typeof DemandRoute
+  '/end-otp': typeof EndOtpRoute
+  '/evidence': typeof EvidenceRoute
+  '/incident': typeof IncidentRoute
+  '/navigate': typeof NavigateRoute
+  '/service-area': typeof ServiceAreaRoute
+  '/start-otp': typeof StartOtpRoute
+  '/jobs/$jobId': typeof JobsJobIdRoute
+  '/jobs': typeof JobsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/active': typeof ActiveRoute
+  '/additional-work': typeof AdditionalWorkRoute
+  '/arrival': typeof ArrivalRoute
+  '/availability': typeof AvailabilityRoute
+  '/complete': typeof CompleteRoute
+  '/decision': typeof DecisionRoute
+  '/demand': typeof DemandRoute
+  '/end-otp': typeof EndOtpRoute
+  '/evidence': typeof EvidenceRoute
+  '/incident': typeof IncidentRoute
+  '/navigate': typeof NavigateRoute
+  '/service-area': typeof ServiceAreaRoute
+  '/start-otp': typeof StartOtpRoute
+  '/jobs/$jobId': typeof JobsJobIdRoute
+  '/jobs/': typeof JobsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/active'
+    | '/additional-work'
+    | '/arrival'
+    | '/availability'
+    | '/complete'
+    | '/decision'
+    | '/demand'
+    | '/end-otp'
+    | '/evidence'
+    | '/incident'
+    | '/navigate'
+    | '/service-area'
+    | '/start-otp'
+    | '/jobs/$jobId'
+    | '/jobs/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/active'
+    | '/additional-work'
+    | '/arrival'
+    | '/availability'
+    | '/complete'
+    | '/decision'
+    | '/demand'
+    | '/end-otp'
+    | '/evidence'
+    | '/incident'
+    | '/navigate'
+    | '/service-area'
+    | '/start-otp'
+    | '/jobs/$jobId'
+    | '/jobs'
+  id:
+    | '__root__'
+    | '/'
+    | '/active'
+    | '/additional-work'
+    | '/arrival'
+    | '/availability'
+    | '/complete'
+    | '/decision'
+    | '/demand'
+    | '/end-otp'
+    | '/evidence'
+    | '/incident'
+    | '/navigate'
+    | '/service-area'
+    | '/start-otp'
+    | '/jobs/$jobId'
+    | '/jobs/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ActiveRoute: typeof ActiveRoute
+  AdditionalWorkRoute: typeof AdditionalWorkRoute
+  ArrivalRoute: typeof ArrivalRoute
+  AvailabilityRoute: typeof AvailabilityRoute
+  CompleteRoute: typeof CompleteRoute
+  DecisionRoute: typeof DecisionRoute
+  DemandRoute: typeof DemandRoute
+  EndOtpRoute: typeof EndOtpRoute
+  EvidenceRoute: typeof EvidenceRoute
+  IncidentRoute: typeof IncidentRoute
+  NavigateRoute: typeof NavigateRoute
+  ServiceAreaRoute: typeof ServiceAreaRoute
+  StartOtpRoute: typeof StartOtpRoute
+  JobsJobIdRoute: typeof JobsJobIdRoute
+  JobsIndexRoute: typeof JobsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +247,131 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/active': {
+      id: '/active'
+      path: '/active'
+      fullPath: '/active'
+      preLoaderRoute: typeof ActiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/additional-work': {
+      id: '/additional-work'
+      path: '/additional-work'
+      fullPath: '/additional-work'
+      preLoaderRoute: typeof AdditionalWorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/arrival': {
+      id: '/arrival'
+      path: '/arrival'
+      fullPath: '/arrival'
+      preLoaderRoute: typeof ArrivalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/availability': {
+      id: '/availability'
+      path: '/availability'
+      fullPath: '/availability'
+      preLoaderRoute: typeof AvailabilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/complete': {
+      id: '/complete'
+      path: '/complete'
+      fullPath: '/complete'
+      preLoaderRoute: typeof CompleteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/decision': {
+      id: '/decision'
+      path: '/decision'
+      fullPath: '/decision'
+      preLoaderRoute: typeof DecisionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/demand': {
+      id: '/demand'
+      path: '/demand'
+      fullPath: '/demand'
+      preLoaderRoute: typeof DemandRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/end-otp': {
+      id: '/end-otp'
+      path: '/end-otp'
+      fullPath: '/end-otp'
+      preLoaderRoute: typeof EndOtpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/evidence': {
+      id: '/evidence'
+      path: '/evidence'
+      fullPath: '/evidence'
+      preLoaderRoute: typeof EvidenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/incident': {
+      id: '/incident'
+      path: '/incident'
+      fullPath: '/incident'
+      preLoaderRoute: typeof IncidentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/navigate': {
+      id: '/navigate'
+      path: '/navigate'
+      fullPath: '/navigate'
+      preLoaderRoute: typeof NavigateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-area': {
+      id: '/service-area'
+      path: '/service-area'
+      fullPath: '/service-area'
+      preLoaderRoute: typeof ServiceAreaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/start-otp': {
+      id: '/start-otp'
+      path: '/start-otp'
+      fullPath: '/start-otp'
+      preLoaderRoute: typeof StartOtpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jobs/': {
+      id: '/jobs/'
+      path: '/jobs'
+      fullPath: '/jobs/'
+      preLoaderRoute: typeof JobsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jobs/$jobId': {
+      id: '/jobs/$jobId'
+      path: '/jobs/$jobId'
+      fullPath: '/jobs/$jobId'
+      preLoaderRoute: typeof JobsJobIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ActiveRoute: ActiveRoute,
+  AdditionalWorkRoute: AdditionalWorkRoute,
+  ArrivalRoute: ArrivalRoute,
+  AvailabilityRoute: AvailabilityRoute,
+  CompleteRoute: CompleteRoute,
+  DecisionRoute: DecisionRoute,
+  DemandRoute: DemandRoute,
+  EndOtpRoute: EndOtpRoute,
+  EvidenceRoute: EvidenceRoute,
+  IncidentRoute: IncidentRoute,
+  NavigateRoute: NavigateRoute,
+  ServiceAreaRoute: ServiceAreaRoute,
+  StartOtpRoute: StartOtpRoute,
+  JobsJobIdRoute: JobsJobIdRoute,
+  JobsIndexRoute: JobsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
