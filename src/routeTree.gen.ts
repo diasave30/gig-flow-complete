@@ -11,11 +11,15 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ActiveRouteImport } from './routes/active'
+import { Route as AdditionalWorkRouteImport } from './routes/additional-work'
 import { Route as ArrivalRouteImport } from './routes/arrival'
 import { Route as AvailabilityRouteImport } from './routes/availability'
+import { Route as CompleteRouteImport } from './routes/complete'
 import { Route as DecisionRouteImport } from './routes/decision'
 import { Route as DemandRouteImport } from './routes/demand'
+import { Route as EndOtpRouteImport } from './routes/end-otp'
 import { Route as EvidenceRouteImport } from './routes/evidence'
+import { Route as IncidentRouteImport } from './routes/incident'
 import { Route as NavigateRouteImport } from './routes/navigate'
 import { Route as ServiceAreaRouteImport } from './routes/service-area'
 import { Route as StartOtpRouteImport } from './routes/start-otp'
@@ -32,6 +36,11 @@ const ActiveRoute = ActiveRouteImport.update({
   path: '/active',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdditionalWorkRoute = AdditionalWorkRouteImport.update({
+  id: '/additional-work',
+  path: '/additional-work',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ArrivalRoute = ArrivalRouteImport.update({
   id: '/arrival',
   path: '/arrival',
@@ -40,6 +49,11 @@ const ArrivalRoute = ArrivalRouteImport.update({
 const AvailabilityRoute = AvailabilityRouteImport.update({
   id: '/availability',
   path: '/availability',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompleteRoute = CompleteRouteImport.update({
+  id: '/complete',
+  path: '/complete',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DecisionRoute = DecisionRouteImport.update({
@@ -52,9 +66,19 @@ const DemandRoute = DemandRouteImport.update({
   path: '/demand',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EndOtpRoute = EndOtpRouteImport.update({
+  id: '/end-otp',
+  path: '/end-otp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EvidenceRoute = EvidenceRouteImport.update({
   id: '/evidence',
   path: '/evidence',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IncidentRoute = IncidentRouteImport.update({
+  id: '/incident',
+  path: '/incident',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NavigateRoute = NavigateRouteImport.update({
@@ -86,11 +110,15 @@ const JobsJobIdRoute = JobsJobIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/active': typeof ActiveRoute
+  '/additional-work': typeof AdditionalWorkRoute
   '/arrival': typeof ArrivalRoute
   '/availability': typeof AvailabilityRoute
+  '/complete': typeof CompleteRoute
   '/decision': typeof DecisionRoute
   '/demand': typeof DemandRoute
+  '/end-otp': typeof EndOtpRoute
   '/evidence': typeof EvidenceRoute
+  '/incident': typeof IncidentRoute
   '/navigate': typeof NavigateRoute
   '/service-area': typeof ServiceAreaRoute
   '/start-otp': typeof StartOtpRoute
@@ -100,11 +128,15 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/active': typeof ActiveRoute
+  '/additional-work': typeof AdditionalWorkRoute
   '/arrival': typeof ArrivalRoute
   '/availability': typeof AvailabilityRoute
+  '/complete': typeof CompleteRoute
   '/decision': typeof DecisionRoute
   '/demand': typeof DemandRoute
+  '/end-otp': typeof EndOtpRoute
   '/evidence': typeof EvidenceRoute
+  '/incident': typeof IncidentRoute
   '/navigate': typeof NavigateRoute
   '/service-area': typeof ServiceAreaRoute
   '/start-otp': typeof StartOtpRoute
@@ -115,11 +147,15 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/active': typeof ActiveRoute
+  '/additional-work': typeof AdditionalWorkRoute
   '/arrival': typeof ArrivalRoute
   '/availability': typeof AvailabilityRoute
+  '/complete': typeof CompleteRoute
   '/decision': typeof DecisionRoute
   '/demand': typeof DemandRoute
+  '/end-otp': typeof EndOtpRoute
   '/evidence': typeof EvidenceRoute
+  '/incident': typeof IncidentRoute
   '/navigate': typeof NavigateRoute
   '/service-area': typeof ServiceAreaRoute
   '/start-otp': typeof StartOtpRoute
@@ -131,11 +167,15 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/active'
+    | '/additional-work'
     | '/arrival'
     | '/availability'
+    | '/complete'
     | '/decision'
     | '/demand'
+    | '/end-otp'
     | '/evidence'
+    | '/incident'
     | '/navigate'
     | '/service-area'
     | '/start-otp'
@@ -145,11 +185,15 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/active'
+    | '/additional-work'
     | '/arrival'
     | '/availability'
+    | '/complete'
     | '/decision'
     | '/demand'
+    | '/end-otp'
     | '/evidence'
+    | '/incident'
     | '/navigate'
     | '/service-area'
     | '/start-otp'
@@ -159,11 +203,15 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/active'
+    | '/additional-work'
     | '/arrival'
     | '/availability'
+    | '/complete'
     | '/decision'
     | '/demand'
+    | '/end-otp'
     | '/evidence'
+    | '/incident'
     | '/navigate'
     | '/service-area'
     | '/start-otp'
@@ -174,11 +222,15 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ActiveRoute: typeof ActiveRoute
+  AdditionalWorkRoute: typeof AdditionalWorkRoute
   ArrivalRoute: typeof ArrivalRoute
   AvailabilityRoute: typeof AvailabilityRoute
+  CompleteRoute: typeof CompleteRoute
   DecisionRoute: typeof DecisionRoute
   DemandRoute: typeof DemandRoute
+  EndOtpRoute: typeof EndOtpRoute
   EvidenceRoute: typeof EvidenceRoute
+  IncidentRoute: typeof IncidentRoute
   NavigateRoute: typeof NavigateRoute
   ServiceAreaRoute: typeof ServiceAreaRoute
   StartOtpRoute: typeof StartOtpRoute
@@ -202,6 +254,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ActiveRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/additional-work': {
+      id: '/additional-work'
+      path: '/additional-work'
+      fullPath: '/additional-work'
+      preLoaderRoute: typeof AdditionalWorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/arrival': {
       id: '/arrival'
       path: '/arrival'
@@ -214,6 +273,13 @@ declare module '@tanstack/react-router' {
       path: '/availability'
       fullPath: '/availability'
       preLoaderRoute: typeof AvailabilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/complete': {
+      id: '/complete'
+      path: '/complete'
+      fullPath: '/complete'
+      preLoaderRoute: typeof CompleteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/decision': {
@@ -230,11 +296,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemandRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/end-otp': {
+      id: '/end-otp'
+      path: '/end-otp'
+      fullPath: '/end-otp'
+      preLoaderRoute: typeof EndOtpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/evidence': {
       id: '/evidence'
       path: '/evidence'
       fullPath: '/evidence'
       preLoaderRoute: typeof EvidenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/incident': {
+      id: '/incident'
+      path: '/incident'
+      fullPath: '/incident'
+      preLoaderRoute: typeof IncidentRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/navigate': {
@@ -278,11 +358,15 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ActiveRoute: ActiveRoute,
+  AdditionalWorkRoute: AdditionalWorkRoute,
   ArrivalRoute: ArrivalRoute,
   AvailabilityRoute: AvailabilityRoute,
+  CompleteRoute: CompleteRoute,
   DecisionRoute: DecisionRoute,
   DemandRoute: DemandRoute,
+  EndOtpRoute: EndOtpRoute,
   EvidenceRoute: EvidenceRoute,
+  IncidentRoute: IncidentRoute,
   NavigateRoute: NavigateRoute,
   ServiceAreaRoute: ServiceAreaRoute,
   StartOtpRoute: StartOtpRoute,
