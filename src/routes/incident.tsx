@@ -25,7 +25,7 @@ export const Route = createFileRoute("/incident")({
       { property: "og:description", content: "Record and submit an incident with safety support." },
     ],
   }),
-  component: Incident;
+  component: Incident,
 });
 
 function Incident() {
