@@ -73,7 +73,7 @@ function Home() {
               SP
             </div>
             <div className="min-w-0">
-              <p className="text-xs text-muted-foreground">Namaste 👋</p>
+              <p className="text-xs text-muted-foreground">Namaste</p>
               <p className="truncate text-[15px] font-bold text-foreground">Suresh Patil</p>
             </div>
           </div>
