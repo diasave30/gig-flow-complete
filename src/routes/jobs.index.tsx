@@ -5,11 +5,11 @@ import { PhoneScreen, StatusBar, TopBar, ScreenBody } from "@/components/apna/sh
 import { Chip, FilterChips, JobCard } from "@/components/apna/ui";
 import { CATEGORIES, JOBS } from "@/lib/apna-data";
 
-type JobSearch = { category?: string };
+type JobSearch = { category?: string | undefined };
 
 export const Route = createFileRoute("/jobs/")({
   validateSearch: (search: Record<string, unknown>): JobSearch => ({
-    category: typeof search.category === "string" ? search.category : undefined,
+    category: typeof search["category"] === "string" ? (search["category"] as string) : undefined,
   }),
   head: () => ({
     meta: [

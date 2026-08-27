@@ -16,11 +16,11 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 
-type Search = { decision?: "accept" | "reject" };
+type Search = { decision?: "accept" | "reject" | undefined };
 
 export const Route = createFileRoute("/decision")({
   validateSearch: (s: Record<string, unknown>): Search => ({
-    decision: s.decision === "reject" ? "reject" : "accept",
+    decision: s["decision"] === "reject" ? "reject" : "accept",
   }),
   head: () => ({
     meta: [

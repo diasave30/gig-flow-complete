@@ -72,7 +72,7 @@ export function Chip({
 }: {
   children: ReactNode;
   variant?: keyof typeof tone;
-  className?: string;
+  className?: string | undefined;
 }) {
   return (
     <span
@@ -99,7 +99,13 @@ const statusTone: Record<JobStatus, keyof typeof tone> = {
   rejected: "danger",
 };
 
-export function StatusBadge({ status, className }: { status: JobStatus; className?: string }) {
+export function StatusBadge({
+  status,
+  className,
+}: {
+  status: JobStatus;
+  className?: string | undefined;
+}) {
   return (
     <Chip variant={statusTone[status]} className={className}>
       <span className="size-1.5 rounded-full bg-current" />
