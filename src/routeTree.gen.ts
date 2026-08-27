@@ -15,6 +15,7 @@ import { Route as ArrivalRouteImport } from './routes/arrival'
 import { Route as AvailabilityRouteImport } from './routes/availability'
 import { Route as DecisionRouteImport } from './routes/decision'
 import { Route as DemandRouteImport } from './routes/demand'
+import { Route as EvidenceRouteImport } from './routes/evidence'
 import { Route as NavigateRouteImport } from './routes/navigate'
 import { Route as ServiceAreaRouteImport } from './routes/service-area'
 import { Route as StartOtpRouteImport } from './routes/start-otp'
@@ -51,6 +52,11 @@ const DemandRoute = DemandRouteImport.update({
   path: '/demand',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EvidenceRoute = EvidenceRouteImport.update({
+  id: '/evidence',
+  path: '/evidence',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NavigateRoute = NavigateRouteImport.update({
   id: '/navigate',
   path: '/navigate',
@@ -84,6 +90,7 @@ export interface FileRoutesByFullPath {
   '/availability': typeof AvailabilityRoute
   '/decision': typeof DecisionRoute
   '/demand': typeof DemandRoute
+  '/evidence': typeof EvidenceRoute
   '/navigate': typeof NavigateRoute
   '/service-area': typeof ServiceAreaRoute
   '/start-otp': typeof StartOtpRoute
@@ -97,6 +104,7 @@ export interface FileRoutesByTo {
   '/availability': typeof AvailabilityRoute
   '/decision': typeof DecisionRoute
   '/demand': typeof DemandRoute
+  '/evidence': typeof EvidenceRoute
   '/navigate': typeof NavigateRoute
   '/service-area': typeof ServiceAreaRoute
   '/start-otp': typeof StartOtpRoute
@@ -111,6 +119,7 @@ export interface FileRoutesById {
   '/availability': typeof AvailabilityRoute
   '/decision': typeof DecisionRoute
   '/demand': typeof DemandRoute
+  '/evidence': typeof EvidenceRoute
   '/navigate': typeof NavigateRoute
   '/service-area': typeof ServiceAreaRoute
   '/start-otp': typeof StartOtpRoute
@@ -126,6 +135,7 @@ export interface FileRouteTypes {
     | '/availability'
     | '/decision'
     | '/demand'
+    | '/evidence'
     | '/navigate'
     | '/service-area'
     | '/start-otp'
@@ -139,6 +149,7 @@ export interface FileRouteTypes {
     | '/availability'
     | '/decision'
     | '/demand'
+    | '/evidence'
     | '/navigate'
     | '/service-area'
     | '/start-otp'
@@ -152,6 +163,7 @@ export interface FileRouteTypes {
     | '/availability'
     | '/decision'
     | '/demand'
+    | '/evidence'
     | '/navigate'
     | '/service-area'
     | '/start-otp'
@@ -166,6 +178,7 @@ export interface RootRouteChildren {
   AvailabilityRoute: typeof AvailabilityRoute
   DecisionRoute: typeof DecisionRoute
   DemandRoute: typeof DemandRoute
+  EvidenceRoute: typeof EvidenceRoute
   NavigateRoute: typeof NavigateRoute
   ServiceAreaRoute: typeof ServiceAreaRoute
   StartOtpRoute: typeof StartOtpRoute
@@ -217,6 +230,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DemandRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/evidence': {
+      id: '/evidence'
+      path: '/evidence'
+      fullPath: '/evidence'
+      preLoaderRoute: typeof EvidenceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/navigate': {
       id: '/navigate'
       path: '/navigate'
@@ -262,6 +282,7 @@ const rootRouteChildren: RootRouteChildren = {
   AvailabilityRoute: AvailabilityRoute,
   DecisionRoute: DecisionRoute,
   DemandRoute: DemandRoute,
+  EvidenceRoute: EvidenceRoute,
   NavigateRoute: NavigateRoute,
   ServiceAreaRoute: ServiceAreaRoute,
   StartOtpRoute: StartOtpRoute,
